@@ -17,7 +17,7 @@ fi
 
 
 #SOME FUNCTIONS
-function sure? {
+function sure {
 	read -p" (y/N)? " 
 	echo
 	test $REPLY = "y" || test $REPLY = "Y"
@@ -59,7 +59,7 @@ Vim Outliner Installation
 
 EOT
 echo -n "Would you like to continue "
-sure? || exit
+sure || exit
 
 
 #CREATE NECESSARY DIRECTORIES
@@ -138,7 +138,7 @@ Add-ons
 EOT
 
 echo -n "Would you like to install these "
-if sure?; then
+if sure; then
 	echo installing add-ons
 	copydir vimoutliner/plugin $vodir/plugin
 	copydir vimoutliner/scripts $vodir/scripts
